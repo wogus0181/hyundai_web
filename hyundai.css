@@ -1,0 +1,63 @@
+body{
+  margin: 0px;
+}
+a{
+  text-decoration: none;  /*a태그의 기본 밑줄을 없앰*/
+}
+#main_title{
+  border-bottom: 5px darkblue solid;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  padding: 20px;
+}
+#sub_title{
+  position: relative;
+  top: 20px;
+  position: relative ;
+  left: 700px;
+  width: 750px;
+}
+.sub_title2{
+  font-size: 25px;
+  margin: 10px;
+  color: black;
+}
+#hyundai_title {
+  font-size: 50px;
+  color: darkblue;
+
+}
+#main_pictur{
+  text-align: center;
+  padding: 30px;
+}
+#benefit{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+.car_list{
+  font-size: 20px;
+  font-weight: bold;
+  width: 300px;
+  text-align: center;
+}
+#car_grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.car_back{
+  width: 400px;
+  margin: 10px;
+  background-color: #F6E3CE;
+}
+input{
+  width: 100px;
+  height: 50px;
+
+}
+
+footer{
+  background-color: #2E2E2E;
+  margin: 0px;
+}
