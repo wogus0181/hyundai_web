@@ -1,0 +1,64 @@
+<style>
+  table{
+    width: 800px;
+    height: 600px;
+    border-bottom:3px solid gray;
+  }
+  th{
+    border-bottom:3px solid gray;
+    font-size:30px;
+  }
+  .gray_underbar1{
+    border-bottom:1px solid gray;
+  }
+  .gray_underbar2{
+    border-bottom:2px solid gray;
+  }
+</style>
+
+<table>
+  <th colspan="3">팰리세이드</th>
+  <tr>
+    <td rowspan="3" class="gray_underbar2">생산월조건</td>
+    <td class="gray_underbar1">8월 이전</td>
+    <td class="gray_underbar1">4.0%</td>
+  </tr>
+  <tr>
+    <td>9월</td>
+    <td rowspan="2" class="gray_underbar2">2.0%</td>
+  </tr>
+  <tr>
+    <td class="gray_underbar2">10월</td>
+  </tr>
+  <tr>
+    <td rowspan="3" class="gray_underbar2">타겟조건</td>
+    <td>조기출고 우대조건</td>
+    <td>10만</td>
+  </tr>
+  <tr>
+    <td>10년 이상 노후차 조건</td>
+    <td>30만</td>
+  </tr>
+  <tr>
+    <td class="gray_underbar2">H패밀리</td>
+    <td class="gray_underbar2">20만~50만</td>
+  </tr>
+
+  <tr>
+    <td rowspan="3" class="gray_underbar2">기타혜택</td>
+    <td>블루멤버스 포인트 선사용</td>
+    <td>40만</td>
+  </tr>
+  <tr>
+    <td>전시차 구매</td>
+    <td>20만</td>
+  </tr>
+  <tr>
+    <td class="gray_underbar2">세이브오토</td>
+    <td class="gray_underbar2">30만/50만</td>
+  </tr>
+  <tr>
+    <td>생산 요청시 예상 납기</td>
+    <td>3개월</td>
+  </tr>
+</table>

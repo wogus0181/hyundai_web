@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB1 - Welcome</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="colors.js"></script>
+  <script src="fetch/fetch.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.js?features=fetch"></script>
+</head>
+<body>
+  <h1><a href="#!welcome">WEB</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
+  <ol id="nav">
+
+  </ol>
+  <article></article>
+  <script>
+    function fetchPage(name){
+      fetch(name).then(function(response){
+        response.text().then(function(text){
+          document.querySelector('article').innerHTML = text;
+        })
+      });
+    }
+    if(location.hash){ // 해쉬가 있다면
+      fetchPage(location.hash.substr(2)); // fetchPage()를 통해서 해쉬값을 주는데 해쉬값은 #!javascript 이니까 첫번째, 두번째 글자 다음에 있는 텍스트를 sub string 하면 된다.
+    } else{ //해쉬가 없다면
+      fetchPage('welcome');  //fetchPage()를 통해서 'welcome' 이라는것을 읽는다.
+    }
+    fetch('list').then(function(response){
+      response.text().then(function(text){
+        console.log(text);
+        var items = text.split(',');  //text에 있는 문자열을 컴마(,)를 기준으로 하나하나 쪼개서 배열이 되게 만든다.
+        var i = 0;
+        var tags = '';
+        while(i<items.length){
+          var item = items[i];
+          item = item.trim();
+          var tag = '<li><a href="#!'+item+'" onclick="fetchPage(\''+item+'\')">'+item+'</a></li>';
+          console.log(tag);
+          tags = tags + tag;
+          i = i + 1;
+        }
+        console.log(items);
+        document.querySelector('#nav').innerHTML = tags;
+      })
+    });
+  </script>
+</body>
+</html>

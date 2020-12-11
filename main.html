@@ -5,6 +5,53 @@
     <title></title>
     <link rel="stylesheet" href="hyundai.css">
     <script src="hyundai.js"></script>
+    <script>
+      function fetchPage(name){  //fetchPage함수, 매개변수 name
+        fetch(name).then(function(response){ //name값으로 서버에 요청
+          response.text().then(function(text){
+            document.querySelector('article').innerHTML = text; // article 태그에 html문법을 넣음.
+          })
+        });
+      }
+
+/*
+      fetch('list').then(function(response){  //list 파일을 서버에 요청하고 응답으로 response를 받는다.
+        response.text().then(function(text){  //
+          console.log(text);  //응답받은 response의 text를 콘솔에 출력해본다.
+          var items = text.split(',');  //list의 내용들이 컴마(,)로 구분되어 있기 때문에 .split으로 구분해 배열로 만듬
+          var i = 0;
+          var tags = '';  // 리스트들을 더해가야 하기 때문에 빈 문자열 변수를 만들어 준다.
+          while(i < items.length){  // 리스트 내용들이 배열로 저장되어있는 items의 길이만큼,즉, 배열 갯수만큼 반복하기위해
+            var item = items[i];  //각 배열 원소마다 item 변수에 저장
+            item = item.trim(); // 문자열 앞뒤에 쓰레기 값들(개행)을 제거하는 .item()함수 적용
+            var tag = '<li><a href="#!'+item+'" onclick="fetchPage(\''+item+'\')">'+item+'</a></li>';
+            console.log(tag);
+            tags = tags + tag;
+            i = i + 1;
+          }
+          console.log(items);
+          document.querySelector('#nav').innerHTML = tags;
+        })
+      });
+*/
+    </script>
+    <style>
+    .car_button{
+      padding-top: 10px;
+      padding-left: 30px;
+      width: 130px;
+      height: 50px;
+      background-color: #B98242;
+      color: black;
+      font-size:1.5em;
+      margin-bottom: 30px;
+      margin-left: 20px;
+    }
+
+    #benefit_table{
+      padding-left: 25%;
+    }
+    </style>
   </head>
   <body>
     <div id="main_title">
@@ -32,15 +79,21 @@
       <div class="car_back">
         <p class="car_list">쏘나타</p>
         <img src="sonata.png">
+        <div class="car_button"><a style="color:white" href="#!쏘나타" onclick="fetchPage('sonata')">혜택보기</a></div>
       </div>
       <div class="car_back">
         <p class="car_list">투싼</p>
         <img src="tucson.png">
+        <div class="car_button"><a style="color:white" href="#!투싼" onclick="fetchPage('tucson')">혜택보기</a></div>
       </div>
       <div class="car_back">
         <p class="car_list">팰리세이드</p>
         <img src="palisade.png">
+        <div class="car_button"><a style="color:white" href="#!팰리세이드" onclick="fetchPage('palisade')">혜택보기</a></div>
       </div>
+    </div>
+    <div id="benefit_table">
+      <article ></article>
     </div>
   </body>
   <footer>
